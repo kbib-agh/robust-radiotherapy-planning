@@ -59,7 +59,7 @@ If you use this code in your research, please cite our work:
 
 ## 📝 License
 
-[Specify your license here]
+MIT
 
 ---
 
@@ -71,4 +71,4 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## 📧 Contact
 
-For questions or collaborations, please contact [your email].
+For questions or collaborations, please contact ztabor@agh.edu.pl
