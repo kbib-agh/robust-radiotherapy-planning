@@ -1,10 +1,6 @@
-# Generative Models for Anatomical Variations
-
-This repository contains code for **training and testing generative models** that learn anatomical variations from CT scans across radiation therapy fractions.
-
 ---
 
-## 📋 Overview
+## 📋 Code Overview
 
 The project focuses on generating **plausible anatomical variants** using CT scans from different fractions of radiation therapy. The models learn to predict realistic anatomical changes conditioned on the first fraction CT scan.
 
@@ -103,33 +99,3 @@ This creates the paired CT data and generates `data_dict.json` with train/test/f
 
 ---
 
-## 📖 Citation
-
-If you use this code in your research, please cite our work:
-
-```bibtex
-@article{your_paper,
-  title={Your Paper Title},
-  author={Your Name},
-  journal={Journal Name},
-  year={2026}
-}
-```
-
----
-
-## 📝 License
-
-MIT License
-
----
-
-## 🤝 Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
----
-
-## 📧 Contact
-
-For questions or collaborations, please contact ztabor@agh.edu.pl
