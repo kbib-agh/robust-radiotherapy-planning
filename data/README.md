@@ -1,3 +1,4 @@
+
 ---
 
 ## 💾 Data Organization
@@ -82,7 +83,12 @@ python code/prepareFractionCT.py
 
 ### Target Naming File Format
 
-The target naming file (e.g., `prostaty.txt`) should contain: open the file and have a look
+The target naming file (e.g., `prostaty.txt`) should contain patient ids and associated target name e.g.:
+```
+1 PTV
+2 CTV
+3 GTV_Primary
+```
 
 This ensures consistent identification of target structures across the dataset despite varying naming conventions in RT STRUCT files.
 
