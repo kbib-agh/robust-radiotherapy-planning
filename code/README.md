@@ -88,7 +88,6 @@ Both approaches enable:
 - Python 3.x
 - SimpleITK
 - PyTorch
-- Additional dependencies (see `requirements.txt`)
 
 ### Data Preparation
 ```bash
