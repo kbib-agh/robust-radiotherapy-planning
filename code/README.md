@@ -1,15 +1,135 @@
-Folder contains code for training and testing generative models of anatomy variations. 
+# Generative Models for Anatomical Variations
 
-The data is composed of pairs (first_fraction_CT, n-th_fraction_CT), created by train_test_data_split.py script.
+This repository contains code for **training and testing generative models** that learn anatomical variations from CT scans across radiation therapy fractions.
 
-Based on the first_fraction_CT (which is a conditional variable), a generative model is aimed to learn to generate plausible anatomical variants, whose probability distribution agrees with the distribution of real anatomical variants (n-th_fraction_CTs, for n in range from 2 to typically 30).
+---
 
-The data is split into train and test parts using per-patient assignment (to prevent data lekeage). Train data is further split into five folds in the same manner. 
+## 📋 Overview
 
-The assignment of the pairs to train/test splits and folds is in data_dict.json file.
+The project focuses on generating **plausible anatomical variants** using CT scans from different fractions of radiation therapy. The models learn to predict realistic anatomical changes conditioned on the first fraction CT scan.
 
-There are two approaches to generating anatomical variations.
+### Data Structure
 
-The first approach (in ddf folder) is based on a direct modelling of dense deformation fields (DDF) transforming moving images into fixed images. To create training data, a deformation field between moving and fixed images is first found using SimpleITK. Then, a generative model (Unet with MCDropout) is trained on this data with first fraction CT at the Unet input and DDF at output. At prediction time MCDropout is activated (by leaving network in train state) and then for a fixed first fraction CT at input, different DDF transforms are generated at output as many times, as predictions are done. These DDFs are then used to wrap the fixed first fraction CT to get plausible anatomical variants. Also, DDFs with corresponding anatomical variants are used to get samples from the estimated probability distribution of 3D dose maps.
+- **Input pairs**: `(first_fraction_CT, n-th_fraction_CT)` where n ranges from 2 to typically 30
+- **Conditional variable**: First fraction CT scan
+- **Target**: Learn probability distribution of anatomical variants matching real n-th fraction CTs
+- **Data creation**: Generated using `train_test_data_split.py` script
 
-The second approach is based on Stable Diffusion. First, VAE is used to get latent representation of CTs. Based on these latent representation Conditional Denoising Diffusion (CDD) is trained with the first fraction CT being the conditional variable. At generation time the first fraction CT is compressed to latent representation which conditiones CDD. The output from CDD is then uncompressed with VAE to get anatomical variant of the first fraction CT. Next, DDF between the first fraction CT and generated variant is calculated and all this data is used to get samples from the estimated probability distribution of 3D dose maps.
+### Data Splitting
+
+- ✅ **Train/Test split**: Per-patient assignment (prevents data leakage)
+- ✅ **Cross-validation**: Train data further split into 5 folds (per-patient)
+- 📄 **Split assignments**: Stored in `data_dict.json` file
+
+---
+
+## 🔬 Approaches
+
+### 1. Dense Deformation Field (DDF) Approach 📁 `ddf/`
+
+This approach directly models **dense deformation fields** that transform moving images into fixed images.
+
+#### Training Pipeline
+1. Calculate deformation fields between moving and fixed images using **SimpleITK**
+2. Train a **U-Net with MC Dropout** where:
+   - **Input**: First fraction CT
+   - **Output**: Dense deformation field (DDF)
+
+#### Inference Pipeline
+1. Keep network in training mode to activate **MC Dropout**
+2. Generate multiple DDF predictions for the same first fraction CT input
+3. Apply DDFs to warp the first fraction CT → **plausible anatomical variants**
+4. Use DDFs with corresponding variants to sample from the **estimated probability distribution of 3D dose maps**
+
+**Key advantage**: Direct modeling of transformations with uncertainty quantification via MC Dropout
+
+---
+
+### 2. Stable Diffusion Approach 📁 `stable_diffusion/`
+
+This approach leverages latent diffusion models for anatomical variant generation.
+
+#### Training Pipeline
+1. **VAE encoding**: Compress CTs into latent representations
+2. Train **Conditional Denoising Diffusion (CDD)** model with first fraction CT as conditioning variable
+
+#### Generation Pipeline
+1. Encode first fraction CT to latent space using VAE
+2. Use latent representation to condition the **CDD model**
+3. Decode CDD output with VAE → **anatomical variant**
+4. Calculate DDF between first fraction CT and generated variant
+5. Use combined data to sample from **estimated probability distribution of 3D dose maps**
+
+**Key advantage**: Powerful latent space modeling with state-of-the-art diffusion techniques
+
+---
+
+## 📂 Repository Structure
+
+```
+.
+├── ddf/                          # Dense Deformation Field approach
+├── stable_diffusion/             # Stable Diffusion approach  
+├── train_test_data_split.py     # Data preparation script
+├── data_dict.json                # Train/test/fold assignments
+└── README.md                     # This file
+```
+
+---
+
+## 🎯 Applications
+
+Both approaches enable:
+- ✨ Generation of **realistic anatomical variants** for radiation therapy planning
+- 📊 Sampling from **probability distributions of 3D dose maps**
+- 🔮 **Uncertainty quantification** in anatomical changes across treatment fractions
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+- Python 3.x
+- SimpleITK
+- PyTorch
+- Additional dependencies (see `requirements.txt`)
+
+### Data Preparation
+```bash
+python train_test_data_split.py
+```
+
+This creates the paired CT data and generates `data_dict.json` with train/test/fold assignments.
+
+---
+
+## 📖 Citation
+
+If you use this code in your research, please cite our work:
+
+```bibtex
+@article{your_paper,
+  title={Your Paper Title},
+  author={Your Name},
+  journal={Journal Name},
+  year={2026}
+}
+```
+
+---
+
+## 📝 License
+
+MIT License
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+---
+
+## 📧 Contact
+
+For questions or collaborations, please contact ztabor@agh.edu.pl
