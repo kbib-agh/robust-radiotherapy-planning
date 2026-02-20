@@ -1,0 +1,132 @@
+%%%%%%%%%%%%%%%%%%%%
+Patient_03
+	Planned doses means
+	 rectum 29.337795342846025
+	 bladder 22.0109146601911
+	 prostate 60.0940638897933
+	 femur heads 9.517556304449657
+	Dose means from anatomical variants
+	 rectum 31.139427122300116
+	 bladder 20.19973206751617
+	 prostate 62.457322209673556
+	 femur heads 8.37891662352323
+%%%%%%%%%%%%%%%%%%%%
+Patient_17
+	Planned doses means
+	 rectum 30.369474719715573
+	 bladder 40.3616963800891
+	 prostate 42.323639039491646
+	 femur heads 23.71891112848523
+	Dose means from anatomical variants
+	 rectum 33.5433464050293
+	 bladder 42.47959518432617
+	 prostate 44.07260513305664
+	 femur heads 20.368358612060547
+%%%%%%%%%%%%%%%%%%%%
+Patient_25
+	Planned doses means
+	 rectum 26.701763223235403
+	 bladder 29.674908322467946
+	 prostate 50.16577620212333
+	 femur heads 11.224948435055962
+	Dose means from anatomical variants
+	 rectum 28.730880737304688
+	 bladder 28.329532623291016
+	 prostate 52.13678741455078
+	 femur heads 9.400232315063477
+%%%%%%%%%%%%%%%%%%%%
+Patient_27
+	Planned doses means
+	 rectum 41.110289912618015
+	 bladder 33.14927202382067
+	 prostate 69.25638772974808
+	 femur heads 15.050837283191505
+	Dose means from anatomical variants
+	 rectum 46.689842224121094
+	 bladder 33.209598541259766
+	 prostate 70.81718444824219
+	 femur heads 13.756036758422852
+%%%%%%%%%%%%%%%%%%%%
+Patient_33
+	Planned doses means
+	 rectum 42.07169086882116
+	 bladder 37.73997160920508
+	 prostate 49.33624663010372
+	 femur heads 20.224147586530528
+	Dose means from anatomical variants
+	 rectum 48.229103088378906
+	 bladder 37.93793487548828
+	 prostate 50.20466995239258
+	 femur heads 16.996564865112305
+%%%%%%%%%%%%%%%%%%%%
+Patient_42
+	Planned doses means
+	 rectum 21.005735934396732
+	 bladder 45.38563807848346
+	 prostate 46.19445207957574
+	 femur heads 16.21165730220882
+	Dose means from anatomical variants
+	 rectum 23.34322738647461
+	 bladder 45.73006057739258
+	 prostate 48.096832275390625
+	 femur heads 13.992526054382324
+%%%%%%%%%%%%%%%%%%%%
+Patient_59
+	Planned doses means
+	 rectum 43.0636653505562
+	 bladder 19.74764891405428
+	 prostate 70.73924954695536
+	 femur heads 11.347182541272902
+	Dose means from anatomical variants
+	 rectum 46.205238342285156
+	 bladder 19.860530853271484
+	 prostate 72.95690155029297
+	 femur heads 9.895125389099121
+%%%%%%%%%%%%%%%%%%%%
+Patient_68
+	Planned doses means
+	 rectum 30.15803595981409
+	 bladder 21.732116207316174
+	 prostate 50.031795364105974
+	 femur heads 12.441923182085684
+	Dose means from anatomical variants
+	 rectum 33.19226837158203
+	 bladder 23.230480194091797
+	 prostate 51.68365478515625
+	 femur heads 10.516839027404785
+%%%%%%%%%%%%%%%%%%%%
+Patient_71
+	Planned doses means
+	 rectum 25.463168748335935
+	 bladder 10.799060451657828
+	 prostate 50.434554877817504
+	 femur heads 11.007988112796525
+	Dose means from anatomical variants
+	 rectum 29.869308471679688
+	 bladder 10.626896858215332
+	 prostate 52.8730354309082
+	 femur heads 9.778385162353516
+%%%%%%%%%%%%%%%%%%%%
+Patient_76
+	Planned doses means
+	 rectum 27.814758553243824
+	 bladder 19.99193740932007
+	 prostate 60.06983370955282
+	 femur heads 14.41969287739928
+	Dose means from anatomical variants
+	 rectum 29.938180923461914
+	 bladder 19.012409210205078
+	 prostate 62.34596633911133
+	 femur heads 13.042547225952148
+%%%%%%%%%%%%%%%%%%%%
+Patient_77
+	Planned doses means
+	 rectum 30.796347812532808
+	 bladder 35.41603668307364
+	 prostate 47.36054503124996
+	 femur heads 22.516407617437462
+	Dose means from anatomical variants
+	 rectum 36.34679412841797
+	 bladder 37.327232360839844
+	 prostate 46.31925964355469
+	 femur heads 19.625911712646484
